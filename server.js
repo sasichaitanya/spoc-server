@@ -12,9 +12,9 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use(cors());
-app.use('/angular5',routes.openRouter)
+app.use('/organics',routes.openRouter)
 
-app.listen(6060,function(err){
+app.listen(7070,function(err){
     if(!err){
         console.log("Server running on port 6060");
     }
