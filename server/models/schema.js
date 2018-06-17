@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var connection = mongoose.connect('mongodb://localhost/organicsDB');
+var connection = mongoose.connect('mongodb://localhost/sunilpocDB');
 var db = mongoose.connection;
 
 db.on('error', function (err) {
@@ -11,23 +11,14 @@ db.once('open', function callback() {
     console.log('CONNECTED TO MONGODB');
 });
 
-var UsersSchema = mongoose.Schema({
-    userName: String,
-    password: String,
-    email: String,
-    contact: String,
-    role:String
-});
-
-var ProductsSchema= mongoose.Schema({
+var CubeSchema = mongoose.Schema({
     name:String,
-    fileName:String
+    images:Array
 });
 
-var UserModel = mongoose.model('UsersCollection', UsersSchema);
-var ProductsModel = mongoose.model('ProductsCollection',ProductsSchema);
+
+var CubesModel = mongoose.model('CubesCollection', CubeSchema);
 
 module.exports = {
-    UserModel: UserModel,
-    ProductsModel:ProductsModel
+    CubesModel: CubesModel,
 }
